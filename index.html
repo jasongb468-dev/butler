@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Term@ Prode — Oberfläche</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" aria-label="Seitenleiste Projekte und Verlauf">
+      <header class="sidebar-header">
+        <h1>Term@ Prode</h1>
+      </header>
+      <section class="projects" aria-label="Projekte">
+        <h2>Projekte</h2>
+        <ul id="projectsList" class="list"></ul>
+        <div class="project-controls">
+          <input id="newProjectName" type="text" placeholder="Neues Projekt-Name" aria-label="Neues Projekt Name">
+          <button id="createProjectBtn">Neu</button>
+        </div>
+      </section>
+
+      <section class="history" aria-label="Verlauf">
+        <h2>Verlauf</h2>
+        <ul id="historyList" class="list"></ul>
+        <div class="history-controls">
+          <button id="clearHistoryBtn" title="Verlauf löschen">Verlauf löschen</button>
+        </div>
+      </section>
+    </aside>
+
+    <main class="main" role="main">
+      <div class="topbar">
+        <div class="status" id="status">Bereit</div>
+        <div class="project-badge" id="currentProject">Projekt: <span id="projectName">(kein Projekt)</span></div>
+      </div>
+
+      <section class="conversation" aria-live="polite">
+        <div id="output" class="output" aria-label="Ausgabe">
+          <div class="placeholder">Die Ausgabe erscheint hier.</div>
+        </div>
+      </section>
+
+      <section class="prompt-area" aria-label="Eingabe">
+        <label for="promptInput" class="sr-only">Prompt eingeben</label>
+        <textarea id="promptInput" placeholder="Gib deinen Prompt hier ein..." rows="4"></textarea>
+        <div class="controls">
+          <div class="left-controls">
+            <button id="saveToProjectBtn" title="In aktuelles Projekt speichern">Speichern</button>
+            <button id="clearOutputBtn" title="Ausgabe löschen">Ausgabe löschen</button>
+          </div>
+          <div class="right-controls">
+            <button id="sendBtn" class="primary">Senden</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
